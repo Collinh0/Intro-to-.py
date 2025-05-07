@@ -112,3 +112,41 @@ empty_set = {}
 print(type(empty_set))
 #to create an empty set, we use the set() constructor
 correct_empty_set = set([2,3,4,3])  #-> a set only accepts one argument,so covert ito a list using[]
+
+#3. Lists
+#ordered collection of items,similar to arrays
+#lists are mutable
+students = [{"score":49, "name":"Collins"},{"score": 50, "name":"Ashley"},{"score": 60, "name":"Nancy"}]
+
+#how to get the length of a list
+print("Length of the list: ", len(students))
+
+scores = [490, 500, 610]
+scores[1] = 50
+#this gives an error
+#scores[5] = 90
+
+scores.insert(5, 90)
+scores.insert(3 , 80)
+
+#map method
+def multiply_by_two(x):
+    return x * 2
+
+map_iterator = map(multiply_by_two, scores)
+print("Multiplied scores: ", list(map_iterator))
+
+multiplied_scores = list(map_iterator)
+
+#Filtering
+print("Filtered scores",list(filter(lambda x: x > 100, multiplied_scores)))
+
+#4. tuples -> similar to lists but immutable and we use parentheses ()
+
+emails = ['collo@gmail.com', 'happy@gmail.com']
+emails[1] = 'ndegwa@gmail.com' # --> this gives an error (immutable)
+
+temp_emails = list(emails)
+temp_emails[1] = 'ndegwa@gmail.com'
+modified_emails = tuple(temp_emails)
+print(modified_emails)
